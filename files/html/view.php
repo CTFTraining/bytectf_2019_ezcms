@@ -1,4 +1,5 @@
 <?php
+ob_start();
 error_reporting(0);
 include ("config.php");
 $file_name = $_GET['filename'];
@@ -18,3 +19,5 @@ echo <<<EOT
 <Ariel>file_path: {$store_path}</Ariel><br>
 </div>
 EOT;
+
+ob_end_flush();

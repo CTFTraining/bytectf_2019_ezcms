@@ -1,4 +1,5 @@
 <?php
+ob_start();
 include("config.php");
 ?>
 <!DOCTYPE html>
@@ -66,3 +67,4 @@ EOF;
     closedir($dir);
 
 }
+ob_end_flush();

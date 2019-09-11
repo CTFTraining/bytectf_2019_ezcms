@@ -1,4 +1,5 @@
 <?php
+ob_start();
 include('config.php');
 ?>
 <!DOCTYPE html>
@@ -45,4 +46,6 @@ if (isset($_POST['username']) && isset($_POST['password'])){
         echo '<script>location.href="upload.php";</script>';
     }
 }
+
+ob_end_flush();
 ?>
