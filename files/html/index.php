@@ -1,22 +1,5 @@
 <?php
-error_reporting(0);
-include('config.php');
-if (isset($_POST['username']) && isset($_POST['password'])){
-    $username = $_POST['username'];
-    $password = $_POST['password'];
-    $username = urldecode($username);
-    $password = urldecode($password);
-    if ($password === "admin"){
-        die("u r not admin !!!");
-    } else {
-        $_SESSION['username'] = $username;
-        $_SESSION['password'] = $password;
-
-        if (login()){
-            echo '<script>location.href="upload.php";</script>';
-        }
-    }
-}
+@session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -43,3 +26,24 @@ if (isset($_POST['username']) && isset($_POST['password'])){
 </form>
 </body>
 </html>
+
+<?php
+error_reporting(0);
+include('config.php');
+if (isset($_POST['username']) && isset($_POST['password'])){
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+    $username = urldecode($username);
+    $password = urldecode($password);
+    if ($password === "admin"){
+        die("u r not admin !!!");
+    }
+
+    $_SESSION['username'] = $username;
+    $_SESSION['password'] = $password;
+
+    if (login()){
+        echo '<script>location.href="upload.php";</script>';
+    }
+}
+?>

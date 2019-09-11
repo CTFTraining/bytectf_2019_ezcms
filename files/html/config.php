@@ -1,6 +1,6 @@
 <?php
 error_reporting(0);
-session_start();
+@session_start();
 $sandbox_dir = 'sandbox/'. md5($_SERVER['REMOTE_ADDR']);
 global $sandbox_dir;
 

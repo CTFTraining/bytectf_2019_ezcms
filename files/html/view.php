@@ -1,4 +1,7 @@
 <?php
+@session_start();
+?>
+<?php
 error_reporting(0);
 include ("config.php");
 $file_name = $_GET['filename'];
