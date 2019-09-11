@@ -1,5 +1,5 @@
 <?php
-@session_start();
+include("config.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -28,7 +28,6 @@
 
 
 <?php
-include ("config.php");
 if (isset($_FILES['file'])){
     $file_tmp = $_FILES['file']['tmp_name'];
     $file_name = $_FILES['file']['name'];

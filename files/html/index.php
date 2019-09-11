@@ -1,5 +1,5 @@
 <?php
-@session_start();
+include('config.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -29,7 +29,6 @@
 
 <?php
 error_reporting(0);
-include('config.php');
 if (isset($_POST['username']) && isset($_POST['password'])){
     $username = $_POST['username'];
     $password = $_POST['password'];
